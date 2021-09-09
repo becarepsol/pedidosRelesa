@@ -1,24 +1,24 @@
-Attribute VB_Name = "moduleUtils"
+Attribute VB_Name = "utils"
 Option Explicit
 
 Public Function Xposition( _
-    target As Variant, _
-    pivot as Object) As Variant
+    ByVal target As Variant, _
+    ByVal pivot As Object) As Variant
 
-    Dim xCount as integer
-    dim tempValue As Variant
+    Dim xCount As Integer
+    Dim tempValue As String
 
     xCount = 0
     Do
         xCount = xCount + 1
-        tempValue = pivot.offset(xCount,0)
-        If (tempValue = "") Then
-            xPosition = false
+        tempValue = pivot.offset(xCount, 0)
+        If (tempValue = vbNullString) Then
+            Xposition = False
             MsgBox target & " no esta en la base de datos"
             Exit Function
         End If
-    Loop until tempValue = target
+    Loop Until tempValue = target
 
-    xPosition = xCount
+    Xposition = xCount
 
 End Function

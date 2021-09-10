@@ -25,7 +25,7 @@ Public Sub main()
         xCount = xCount + 1
         stockGeneral = hojStock.offset(xOffset, 4)
         stockTrans = hojStock.offset(xOffset, 5)
-        promVentMes = PromVentasMes(codigo, 3)
+        promVentMes = PromVentasMes(codigo, 1)
         stockProvisional = stockProvisional(stockGeneral, stockTrans, pomVentMes)
         Alcance = Alcance(stockProvisional, promVentMes)
     Loop

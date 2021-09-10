@@ -86,3 +86,24 @@ Public Sub test_TransStock()
     sheets("Pronostico").range("J13") = TransStock(codigo, 3)
 
 End Sub
+
+Public Sub test_Alcance()
+
+    Dim stckProv As Long
+    Dim promVentMes As Long
+
+    Dim stockGeneral As Long
+    Dim stockTrans As Long
+    Dim promVentMes As Long
+
+    Dim codigo As String
+
+    codigo = "RP167N51"
+    promVentMes = PromVentasMes(codigo, 1)
+    stockTrans = TransStock(codigo, 1)
+    stockGeneral = GeneralStock(codigo)
+    stockProvisional(stockGeneral,stockTrans, promVentMes)
+
+    sheets("Pronostico").range("J11") = Alcance(stockProvisional, promVentMes)
+
+End Sub

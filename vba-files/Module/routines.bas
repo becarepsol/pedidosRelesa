@@ -29,7 +29,7 @@ Public Function FinalAlcance(ByVal codigo as String)
 
 End Sub
 
-public Sub PrintValues(  _
+Public Sub PrintValues(  _
     ByVal pedido As Long, _
     ByVal codigo As String, _
     ByVal stckProv As Long, _

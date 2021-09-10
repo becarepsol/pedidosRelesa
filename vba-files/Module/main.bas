@@ -20,6 +20,10 @@ Public Sub main()
     Dim pronosAjustado As Long
     Dim stckProv As Long
 
+    Dim stockGeneral As Long
+    Dim stockTrans As Long
+    Dim promVentMes As Long
+
     Dim xOffset As Long
     Dim yOffset As Long
 
@@ -38,7 +42,13 @@ Public Sub main()
 
         If Suficiente(stockAlcacne) Then
 
+            stockGeneral = GeneralStock(codigo)
+            stockTrans = TransStock(codigo, 3)
+            promVentMes = PromVentasMes(codigo, 1)
+
+            stckProv = ProvisionalStock(stockGeneral, stockTrans, promVentMes
             pedido = 0
+
             PrintValue(pedido, codigo, stckProv, stockAlcance)
             GoTo NextIteration
 

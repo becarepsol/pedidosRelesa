@@ -28,3 +28,11 @@ Public Function FinalAlcance(ByVal codigo as String)
     Next periodo
 
 End Sub
+
+public Sub PrintValues(  _
+    ByVal pedido as Long _
+    ByVal codigo as String)
+
+
+
+End Sub

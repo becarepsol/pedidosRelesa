@@ -1,6 +1,10 @@
 Attribute VB_Name = "main"
 Option Explicit
 
+Public hojPed As Range
+Public hojStock As Range
+Public hojProno As Range
+
 '@EntryPoint "Main program structure"
 Public Sub main()
 
@@ -10,10 +14,7 @@ Public Sub main()
     Err.Source = "main"
 
     Dim codigo As String
-
-    Dim hojPed As Range
-    Dim hojProno As Range
-    Dim hojStock As Range
+    Dim pedido As Long
 
     Dim xOffset As Long
     Dim yOffset As Long

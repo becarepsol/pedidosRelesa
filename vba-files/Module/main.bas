@@ -15,6 +15,7 @@ Public Sub main()
 
     Dim codigo As String
     Dim pedido As Long
+    Dim stockAlcacne As Long
 
     Dim xOffset As Long
     Dim yOffset As Long
@@ -28,9 +29,10 @@ Public Sub main()
     Do While codigo <> vbNullString
         xOffset = xOffset + 1
         codigo = hojPed.offset(xOffset,0)
-        stockAlcacne = FinalAlcance(codigo)
+        stockAlcance = FinalAlcance(codigo)
         If Suficiente(stockAlcacne) Then
             pedido = 0
+            PrintValue(pedido, codigo, stockAlcance)
             GoTo NextIteration
         End If
         NextIteration:

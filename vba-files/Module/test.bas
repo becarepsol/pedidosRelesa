@@ -56,11 +56,11 @@ Public Sub test_GeneralStock()
     sheets("Pronostico").range("J11") = GeneralStock(codigo)
 End Sub
 
-Public Sub test_StockProvisional()
+Public Sub test_ProvisionalStock()
     ' If an error occurs, pass error to VSCode
     On Error Resume Next    ' Defer error handling.
     'Set Error Source
-    Err.Source = "test_StockProvisional"
+    Err.Source = "test_ProvisionalStock"
 
     Dim stockGeneral As Long
     Dim stockTrans As Long
@@ -72,7 +72,7 @@ Public Sub test_StockProvisional()
     stockTrans = TransStock(codigo, 1)
     stockGeneral = GeneralStock(codigo)
 
-    sheets("Pronostico").range("J11") = StockProvisional(stockGeneral,stockTrans, promVentMes)
+    sheets("Pronostico").range("J11") = ProvisionalStock(stockGeneral,stockTrans, promVentMes)
 
 End Sub
 
@@ -95,6 +95,7 @@ Public Sub test_Alcance()
     Dim stockGeneral As Long
     Dim stockTrans As Long
     Dim promVentMes As Long
+    Dim stockProvisional As Long
 
     Dim codigo As String
 
@@ -102,8 +103,8 @@ Public Sub test_Alcance()
     promVentMes = PromVentasMes(codigo, 1)
     stockTrans = TransStock(codigo, 1)
     stockGeneral = GeneralStock(codigo)
-    StockProvisional(stockGeneral,stockTrans, promVentMes)
+    stockProvisional = ProvisionalStock(stockGeneral,stockTrans, promVentMes)
 
-    sheets("Pronostico").range("J11") = Alcance(StockProvisional, promVentMes)
+    sheets("Pronostico").range("J11") = Alcance(ProvisionalStock, promVentMes)
 
 End Sub

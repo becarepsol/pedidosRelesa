@@ -2,19 +2,19 @@ Attribute VB_Name = "functions"
 
 Option Explicit
 
-Public Function StockProvisional( _
+Public Function ProvisionalStock( _
     ByVal stockGeneral As Long, _
     ByVal stockTrans As Long, _
     ByVal promVentMes As Long) As Long
 
     On Error Resume Next
     'Set Error Source Macro/Function name
-    Err.Source = "StockProvisional"
+    Err.Source = "ProvisionalStock"
 
     If (stockGeneral + stockTrans - promVentMes) < 0 Then
-        StockProvisional = 0
+        ProvisionalStock = 0
         Else
-        StockProvisional = round((stockGeneral + stockTrans - promVentMes), 1)
+        ProvisionalStock = round((stockGeneral + stockTrans - promVentMes), 1)
     End If
 End Function
 

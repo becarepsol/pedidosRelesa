@@ -92,7 +92,6 @@ Public Function StockGeneral(ByVal codigo as String) as Long
 End Function
 
 Public Function StockTrans( _
-
     ByVal codigo As String, _
     ByVal period As Long) as Long
 

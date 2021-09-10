@@ -75,3 +75,18 @@ Public Function PromVentasMes( _
     End If
 
 End Function
+
+Public Function StockGeneral(ByVal codigo as String) as Long
+
+    Dim pivot as Range
+    Dim xCount as Long
+
+    Set pivot = sheets("Stock").range("A2")
+    xCount = Xposition(codigo, pivot)
+    If xCount = False Then
+        StockGeneral = 0
+        Exit Function
+    End If
+    StockGeneral = pivot.offset(xCount, 4)
+
+End Function

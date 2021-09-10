@@ -22,3 +22,13 @@ Public Function Xposition( _
     Xposition = xCount
 
 End Function
+
+Public Function Suficiente(ByVal stockAlcance as Long) As Boolean
+
+    If stockAlcacne > 3 Then
+        Suficiente = true
+    Else
+        Suficiente = false
+    End If
+
+End Function

@@ -47,3 +47,12 @@ Public Sub test_PromVentasMes()
     sheets("Pronostico").range("J11") = PromVentasMes(codigo,2)
 
 End Sub
+
+Public Sub test_StockGeneral()
+
+    Dim codigo As String
+
+    codigo = "RP167N51"
+    sheets("Pronostico").range("J11") = StockGeneral(codigo)
+
+End Sub

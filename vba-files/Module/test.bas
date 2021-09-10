@@ -89,12 +89,10 @@ End Sub
 
 Public Sub test_Alcance()
 
-    Dim stckProv As Long
     Dim promVentMes As Long
 
     Dim stockGeneral As Long
     Dim stockTrans As Long
-    Dim promVentMes As Long
     Dim stockProvisional As Long
 
     Dim codigo As String
@@ -105,6 +103,6 @@ Public Sub test_Alcance()
     stockGeneral = GeneralStock(codigo)
     stockProvisional = ProvisionalStock(stockGeneral,stockTrans, promVentMes)
 
-    sheets("Pronostico").range("J11") = Alcance(ProvisionalStock, promVentMes)
+    sheets("Pronostico").range("J11") = Alcance(stockProvisional, promVentMes)
 
 End Sub

@@ -50,14 +50,14 @@ Public Sub main()
             pedido = 0
 
             PrintValue(pedido, codigo, stckProv, stockAlcance)
-            GoTo NextIteration
 
         Else
+
             pedido = pronosAjustado
             PrintValue(pedido, codigo, stckProv, stockAlcance)
-            GoTo NextIteration
+
         End If
-        NextIteration:
+
     Loop
 
 End Sub

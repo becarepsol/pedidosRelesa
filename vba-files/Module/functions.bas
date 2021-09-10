@@ -91,7 +91,7 @@ Public Function StockGeneral(ByVal codigo as String) as Long
 
 End Function
 
-Public Function StockTrans( _
+Public Function TransStock( _
     ByVal codigo As String, _
     ByVal period As Long) as Long
 
@@ -101,9 +101,9 @@ Public Function StockTrans( _
     Set pivot = sheets("Stock").range("A2")
     xCount = Xposition(codigo, pivot)
     If xCount = False Then
-        StockTrans = 0
+        TransStock = 0
         Exit Function
     End If
-    StockTrans = pivot.offset(xCount, 4 + period)
+    TransStock = pivot.offset(xCount, 4 + period)
 
 End Function

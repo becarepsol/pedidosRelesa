@@ -11,7 +11,7 @@ Public Sub main()
 
     Dim codigo As String
     Dim xCount As Variant
-    Dim hojPed As Object, hojProno As Object, hojStock As Object
+    Dim hojPed As Range, hojProno As Range, hojStock As Range
     Dim stockTrans As Long, stockGeneral As Long, stockProvisional As Long
     Dim promVentMes As Long
     Dim xOffset As Variant, yOffset As Variant

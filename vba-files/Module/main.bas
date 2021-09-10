@@ -10,11 +10,13 @@ Public Sub main()
     Err.Source = "main"
 
     Dim codigo As String
-    Dim xCount As Variant
-    Dim hojPed As Range, hojProno As Range, hojStock As Range
-    Dim stockTrans As Long, stockGeneral As Long, ProvisionalStock As Long
-    Dim promVentMes As Long
-    Dim xOffset As Variant, yOffset As Variant
+
+    Dim hojPed As Range
+    Dim hojProno As Range
+    Dim hojStock As Range
+
+    Dim xOffset As Long
+    Dim yOffset As Long
 
     Set hojPed = sheets("Seleccionados").range("A3")
     Set hojStock = sheets("Stock").range("A2")

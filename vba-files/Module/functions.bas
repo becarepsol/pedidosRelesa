@@ -64,9 +64,14 @@ Public Function PromVentasMes( _
 
     set pivot = sheets("VentasxMes2021").range("A2")
     xCount = Xposition(codigo, pivot)
+    If xCount = False Then
+        PromVentasMes = 0
+        Exit Function
+    End If
     PromVentasMes = pivot.offset(xCount,15 + period)
     If (PromVentasMes < 0) Then
-       PromVentasMes = 0 
+        PromVentasMes = 0
+        MsgBox "El promedio de ventas del codigo " & codigo & " es negativo"
     End If
 
 End Function

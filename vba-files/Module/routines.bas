@@ -1,6 +1,6 @@
 Attribute VB_Name = "routines"
 
-Public Function FinalAlcance(ByVal codigo as String)
+Public Function AlcanceFinal(ByVal codigo as String) as Long
 
     Dim finalAlcance as Long
     Dim promVentMes As Long

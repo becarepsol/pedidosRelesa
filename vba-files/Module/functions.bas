@@ -34,7 +34,7 @@ Public Function Alcance( _
 End Function
 
 Public Function Pronostico( _
-    ByRef codigo As Variant, _
+    ByRef codigo As String, _
     ByRef pivot As Object) As Long
 
     Dim xCount As Variant

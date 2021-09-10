@@ -48,23 +48,6 @@ Public Sub test_PromVentasMes()
 
 End Sub
 
-Public Sub test_stockProvisional()
-    ' If an error occurs, pass error to VSCode
-    On Error Resume Next    ' Defer error handling.
-    'Set Error Source
-    Err.Source = "test_stockProvisional"
-
-    Dim stockGeneral As Long
-    Dim stockTrans As Long
-    Dim promVentMes As Long
-    Dim codigo As String
-
-    codigo = "RP167N51"
-    promVentMes = PromVentasMes(codigo, 1)
-    stockTrans = 23
-
-End Sub
-
 Public Sub test_StockGeneral()
 
     Dim codigo As String

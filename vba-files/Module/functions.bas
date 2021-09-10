@@ -102,7 +102,7 @@ Public Function StockTrans( _
     Set pivot = sheets("Stock").range("A2")
     xCount = Xposition(codigo, pivot)
     If xCount = False Then
-        StockGeneral = 0
+        StockTrans = 0
         Exit Function
     End If
     StockTrans = pivot.offset(xCount, 4 + period)

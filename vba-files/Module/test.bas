@@ -72,3 +72,14 @@ Public Sub test_stockProvisional()
     stockTrans = 23
 
 End Sub
+
+Public Sub test_StockTrans()
+
+    Dim codigo As String
+
+    codigo = "RP167N51"
+    sheets("Pronostico").range("J11") = StockTrans(codigo, 1)
+    sheets("Pronostico").range("J12") = StockTrans(codigo, 2)
+    sheets("Pronostico").range("J13") = StockTrans(codigo, 3)
+
+End Sub

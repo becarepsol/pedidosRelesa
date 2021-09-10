@@ -48,7 +48,23 @@ Public Sub test_PromVentasMes()
 
 End Sub
 
-<<<<<<< HEAD
+Public Sub test_stockProvisional()
+    ' If an error occurs, pass error to VSCode
+    On Error Resume Next    ' Defer error handling.
+    'Set Error Source
+    Err.Source = "test_stockProvisional"
+
+    Dim stockGeneral As Long
+    Dim stockTrans As Long
+    Dim promVentMes As Long
+    Dim codigo As String
+
+    codigo = "RP167N51"
+    promVentMes = PromVentasMes(codigo, 1)
+    stockTrans = 23
+
+End Sub
+
 Public Sub test_StockGeneral()
 
     Dim codigo As String
@@ -57,8 +73,6 @@ Public Sub test_StockGeneral()
     sheets("Pronostico").range("J11") = StockGeneral(codigo)
 End Sub
 
-=======
->>>>>>> ee3ed41 (outline test variables)
 Public Sub test_stockProvisional()
     ' If an error occurs, pass error to VSCode
     On Error Resume Next    ' Defer error handling.
@@ -76,7 +90,6 @@ Public Sub test_stockProvisional()
     stockGeneral = StockGeneral(codigo)
 
 End Sub
-<<<<<<< HEAD
 
 Public Sub test_StockTrans()
 
@@ -88,5 +101,3 @@ Public Sub test_StockTrans()
     sheets("Pronostico").range("J13") = StockTrans(codigo, 3)
 
 End Sub
-=======
->>>>>>> ee3ed41 (outline test variables)

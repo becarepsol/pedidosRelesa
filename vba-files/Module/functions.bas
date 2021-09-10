@@ -90,3 +90,21 @@ Public Function StockGeneral(ByVal codigo as String) as Long
     StockGeneral = pivot.offset(xCount, 4)
 
 End Function
+
+Public Function StockTrans( _
+
+    ByVal codigo As String, _
+    ByVal period As Long) as Long
+
+    Dim pivot As Range
+    Dim xCount as Long
+
+    Set pivot = sheets("Stock").range("A2")
+    xCount = Xposition(codigo, pivot)
+    If xCount = False Then
+        StockGeneral = 0
+        Exit Function
+    End If
+    StockTrans = pivot.offset(xCount, 4 + period)
+
+End Function

@@ -12,7 +12,7 @@ Public Sub main()
     Dim codigo As String
     Dim xCount As Variant
     Dim hojPed As Range, hojProno As Range, hojStock As Range
-    Dim stockTrans As Long, stockGeneral As Long, stockProvisional As Long
+    Dim stockTrans As Long, stockGeneral As Long, StockProvisional As Long
     Dim promVentMes As Long
     Dim xOffset As Variant, yOffset As Variant
 
@@ -26,8 +26,8 @@ Public Sub main()
         stockGeneral = hojStock.offset(xOffset, 4)
         stockTrans = hojStock.offset(xOffset, 5)
         promVentMes = PromVentasMes(codigo, 1)
-        stockProvisional = stockProvisional(stockGeneral, stockTrans, pomVentMes)
-        Alcance = Alcance(stockProvisional, promVentMes)
+        StockProvisional = StockProvisional(stockGeneral, stockTrans, pomVentMes)
+        Alcance = Alcance(StockProvisional, promVentMes)
     Loop
 
 End Sub

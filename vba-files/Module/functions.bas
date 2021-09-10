@@ -2,7 +2,7 @@ Attribute VB_Name = "functions"
 
 Option Explicit
 
-Public Function stockProvisional( _
+Public Function StockProvisional( _
     ByVal stockGeneral As Long, _
     ByVal stockTrans As Long, _
     ByVal promVentMes As Long) As Long
@@ -12,9 +12,9 @@ Public Function stockProvisional( _
     Err.Source = "StockProvisional"
 
     If (stockGeneral + stockTrans - promVentMes) < 0 Then
-        stockProvisional = 0
+        StockProvisional = 0
         Else
-        stockProvisional = round((stockGeneral + stockTrans - promVentMes), 1)
+        StockProvisional = round((stockGeneral + stockTrans - promVentMes), 1)
     End If
 End Function
 

@@ -89,6 +89,8 @@ Public Sub test_stockProvisional()
     stockTrans = StockTrans(codigo, 1)
     stockGeneral = StockGeneral(codigo)
 
+    sheets("Pronostico").range("J11") = stockProvisional(stockGeneral,stockTrans, promVentMes)
+
 End Sub
 
 Public Sub test_StockTrans()

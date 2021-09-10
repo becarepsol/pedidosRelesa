@@ -22,14 +22,17 @@ Public Sub main()
     Set hojStock = sheets("Stock").range("A2")
     Set hojProno = sheets("Pronostico").range("A3")
 
-    xCount = 1
-    Do While hojProno.offset(xCount, 0) <> vbNullString
-        xCount = xCount + 1
-        stockGeneral = hojStock.offset(xOffset, 4)
-        stockTrans = hojStock.offset(xOffset, 5)
-        promVentMes = PromVentasMes(codigo, 1)
-        ProvisionalStock = ProvisionalStock(stockGeneral, stockTrans, pomVentMes)
-        Alcance = Alcance(ProvisionalStock, promVentMes)
+    xOffset = 0
+    codigo = hojPed.offset(xOffset,0)
+    Do While codigo <> vbNullString
+        xOffset = xOffset + 1
+        codigo = hojPed.offset(xOffset,0)
+        stockAlcacne = FinalAlcance(codigo)
+        If Suficiente(stockAlcacne) Then
+            pedido = 0
+            GoTo NextIteration
+        End If
+        NextIteration:
     Loop
 
 End Sub

@@ -30,9 +30,40 @@ Public Function FinalAlcance(ByVal codigo as String)
 End Sub
 
 public Sub PrintValues(  _
-    ByVal pedido as Long _
-    ByVal codigo as String)
+    ByVal pedido As Long _
+    ByVal codigo As String _
+    ByVal stockAlcance As Long)
 
+    Dim undxPalet As Long
+    Dim numPalets As Long
+    Dim pedLitros As Long
 
+    Dim stckPosition As Long
+    Dim stckLitros As Long
+    Dim pedPosition As Long
+
+        pedPosition = Xposition(codigo, hojPed)
+        stckPosition = Xposition(codigo, hojStock)
+        undxPalet = hojStock.offset(stckPosition, 8)
+
+    If pedido > 0 Then
+
+        stckLitros = hojStock.offset(stckPosition, 3)
+        numPalets = Round(pedido/undxPalet)
+        pedLitros = Round(pedido * stckLitros)
+
+    Else
+        numPalets = 0
+        pedLitros = 0
+
+    End If
+
+    ' Print one by one
+    hojPed.offset(pedPosition, 4) = undxPalet
+    hojPed.offset(pedPosition, 5) = numPalets
+    hojPed.offset(pedPosition, 6) = pedido
+    hojPed.offset(pedPosition, 7) = pedLitros
+    hojPed.offset(pedPosition, 8) = stckProv ' Falta este
+    hojPed.offset(pedPosition, 9) = stockAlcance
 
 End Sub

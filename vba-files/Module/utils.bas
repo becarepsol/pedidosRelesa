@@ -2,8 +2,8 @@ Attribute VB_Name = "utils"
 Option Explicit
 
 Public Function Xposition( _
-    ByVal target As Variant, _
-    ByRef pivot As Object) As Variant
+    ByVal target As String, _
+    ByRef pivot As Range) As Variant
 
     Dim xCount As Integer
     Dim tempValue As String

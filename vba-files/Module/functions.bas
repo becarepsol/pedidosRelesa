@@ -57,9 +57,7 @@ End Function
 
 Public Function PromVentasMes( _
     ByVal codigo As String, _
-    ByVal period As Long _
-    Optional _
-    ByRef pivot As Object = sheets("VentasxMes2021").range("A2")) As Long
+    ByVal period As Long) As Long
 
     Dim xCount As Long
     xCount = Xposition(codigo, pivot)

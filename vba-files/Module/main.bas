@@ -27,10 +27,13 @@ Public Sub main()
     xOffset = 0
     codigo = hojPed.offset(xOffset,0)
     Do While codigo <> vbNullString
+
         xOffset = xOffset + 1
         codigo = hojPed.offset(xOffset,0)
         stockAlcance = FinalAlcance(codigo)
+
         If Suficiente(stockAlcacne) Then
+
             pedido = 0
             PrintValue(pedido, codigo, stockAlcance)
             GoTo NextIteration

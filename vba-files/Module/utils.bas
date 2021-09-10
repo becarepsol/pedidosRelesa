@@ -3,7 +3,7 @@ Option Explicit
 
 Public Function Xposition( _
     ByVal target As Variant, _
-    ByVal pivot As Object) As Variant
+    ByRef pivot As Object) As Variant
 
     Dim xCount As Integer
     Dim tempValue As String

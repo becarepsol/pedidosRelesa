@@ -59,10 +59,13 @@ Public Function PromVentasMes( _
     ByVal codigo As Variant, _
     ByVal period As Long _
     Optional _
-    ByVal pivot As Object = sheets("VentasxMes2021").range("A2")) As Long
+    ByRef pivot As Object = sheets("VentasxMes2021").range("A2")) As Long
 
     Dim xCount As Long
     xCount = Xposition(codigo, pivot)
     PromVentasMes = pivot.offset(xCount,15 + period)
+    If (PromVentasMes < 0) Then
+       PromVentasMes = 0 
+    End If
 
 End Function

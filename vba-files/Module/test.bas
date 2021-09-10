@@ -48,12 +48,12 @@ Public Sub test_PromVentasMes()
 
 End Sub
 
-Public Sub test_StockGeneral()
+Public Sub test_GeneralStock()
 
     Dim codigo As String
 
     codigo = "RP167N51"
-    sheets("Pronostico").range("J11") = StockGeneral(codigo)
+    sheets("Pronostico").range("J11") = GeneralStock(codigo)
 End Sub
 
 Public Sub test_stockProvisional()
@@ -70,7 +70,7 @@ Public Sub test_stockProvisional()
     codigo = "RP167N51"
     promVentMes = PromVentasMes(codigo, 1)
     stockTrans = TransStock(codigo, 1)
-    stockGeneral = StockGeneral(codigo)
+    stockGeneral = GeneralStock(codigo)
 
     sheets("Pronostico").range("J11") = stockProvisional(stockGeneral,stockTrans, promVentMes)
 

@@ -15,7 +15,10 @@ Public Sub main()
 
     Dim codigo As String
     Dim pedido As Long
+
     Dim stockAlcacne As Long
+    Dim pronosAjustado As Long
+    Dim stckProv As Long
 
     Dim xOffset As Long
     Dim yOffset As Long
@@ -30,12 +33,18 @@ Public Sub main()
 
         xOffset = xOffset + 1
         codigo = hojPed.offset(xOffset,0)
+        pronosAjustado = Pronostico(codigo, hojProno)
         stockAlcance = FinalAlcance(codigo)
 
         If Suficiente(stockAlcacne) Then
 
             pedido = 0
-            PrintValue(pedido, codigo, stockAlcance)
+            PrintValue(pedido, codigo, stckProv, stockAlcance)
+            GoTo NextIteration
+
+        Else
+            pedido = pronosAjustado
+            PrintValue(pedido, codigo, stckProv, stockAlcance)
             GoTo NextIteration
         End If
         NextIteration:

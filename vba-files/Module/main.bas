@@ -40,20 +40,21 @@ Public Sub main()
         pronosAjustado = Pronostico(codigo, hojProno)
         stockAlcance = FinalAlcance(codigo)
 
+        stockGeneral = GeneralStock(codigo)
+        stockTrans = TransStock(codigo, 3)
+        promVentMes = PromVentasMes(codigo, 1)
+
+        stckProv = ProvisionalStock(stockGeneral, stockTrans, promVentMes)
+
         If Suficiente(stockAlcacne) Then
 
-            stockGeneral = GeneralStock(codigo)
-            stockTrans = TransStock(codigo, 3)
-            promVentMes = PromVentasMes(codigo, 1)
-
-            stckProv = ProvisionalStock(stockGeneral, stockTrans, promVentMes
             pedido = 0
-
             PrintValue(pedido, codigo, stckProv, stockAlcance)
 
         Else
 
             pedido = pronosAjustado
+            stckProv = stckProv + pedido
             PrintValue(pedido, codigo, stckProv, stockAlcance)
 
         End If

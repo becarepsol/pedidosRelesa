@@ -25,7 +25,6 @@ Public Sub main()
     Dim promVentMes As Long
 
     Dim xOffset As Long
-    Dim yOffset As Long
 
     Set hojPed = sheets("Pedidos").range("A3")
     Set hojStock = sheets("Stock").range("A2")
@@ -38,7 +37,7 @@ Public Sub main()
         xOffset = xOffset + 1
         codigo = hojPed.offset(xOffset,0)
         pronosAjustado = Pronostico(codigo, hojProno)
-        stockAlcance = FinalAlcance(codigo)
+        stockAlcance = AlcanceFinal(codigo)
 
         stockGeneral = GeneralStock(codigo)
         stockTrans = TransStock(codigo, 3)
@@ -46,16 +45,16 @@ Public Sub main()
 
         stckProv = ProvisionalStock(stockGeneral, stockTrans, promVentMes)
 
-        If Suficiente(stockAlcacne) Then
+        If Suficiente(stockAlcance) Then
 
             pedido = 0
-            PrintValue(pedido, codigo, stckProv, stockAlcance)
+            Call PrintValues(pedido, codigo, stckProv, stockAlcance)
 
-        Else
+            Else
 
             pedido = pronosAjustado
             stckProv = stckProv + pedido
-            PrintValue(pedido, codigo, stckProv, stockAlcance)
+            Call PrintValues(pedido, codigo, stckProv, stockAlcance)
 
         End If
 

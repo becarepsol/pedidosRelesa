@@ -18,7 +18,7 @@ Public Function AlcanceFinal(ByVal codigo as String) as Long
         If (periodo = 1) Then
             stockGeneral = GeneralStock(codigo)
             promVentMes = PromVentasMes(codigo, periodo)
-        else
+            else
             promVentMes = finalAlcance
         End If
 
@@ -27,7 +27,7 @@ Public Function AlcanceFinal(ByVal codigo as String) as Long
 
     Next periodo
 
-End Sub
+End Function
 
 Public Sub PrintValues(  _
     ByVal pedido As Long, _
@@ -43,9 +43,9 @@ Public Sub PrintValues(  _
     Dim stckLitros As Long
     Dim pedPosition As Long
 
-        pedPosition = Xposition(codigo, hojPed)
-        stckPosition = Xposition(codigo, hojStock)
-        undxPalet = hojStock.offset(stckPosition, 8)
+    pedPosition = Xposition(codigo, hojPed)
+    stckPosition = Xposition(codigo, hojStock)
+    undxPalet = hojStock.offset(stckPosition, 8)
 
     If pedido > 0 Then
 
@@ -53,7 +53,7 @@ Public Sub PrintValues(  _
         numPalets = Round(pedido/undxPalet)
         pedLitros = Round(pedido * stckLitros)
 
-    Else
+        Else
         numPalets = 0
         pedLitros = 0
 

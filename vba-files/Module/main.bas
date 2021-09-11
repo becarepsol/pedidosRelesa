@@ -16,7 +16,7 @@ Public Sub main()
     Dim codigo As String
     Dim pedido As Long
 
-    Dim stockAlcacne As Long
+    Dim stockAlcance As Long
     Dim pronosAjustado As Long
     Dim stckProv As Long
 
@@ -27,7 +27,7 @@ Public Sub main()
     Dim xOffset As Long
     Dim yOffset As Long
 
-    Set hojPed = sheets("Seleccionados").range("A3")
+    Set hojPed = sheets("Pedidos").range("A3")
     Set hojStock = sheets("Stock").range("A2")
     Set hojProno = sheets("Pronostico").range("A3")
 

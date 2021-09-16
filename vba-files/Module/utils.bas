@@ -25,7 +25,7 @@ End Function
 
 Public Function Suficiente(ByVal stockAlcance as Long) As Boolean
 
-    If stockAlcance > 3 Then
+    If stockAlcance >= 3 Then
         Suficiente = true
         Else
         Suficiente = false

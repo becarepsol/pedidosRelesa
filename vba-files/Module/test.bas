@@ -11,7 +11,7 @@ Public Sub test_xPosition()
     Dim codigo As String
     Dim pivot As Range
 
-    codigo = "RP165M51"
+    codigo = "RP167N51"
     Set pivot = sheets("Pronostico").range("A3")
 
     sheets("Pronostico").range("J11") = Xposition(codigo, pivot)

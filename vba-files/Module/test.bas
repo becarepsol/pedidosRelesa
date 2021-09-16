@@ -127,3 +127,11 @@ Public Sub test_Suficiente()
     sheets("Pronostico").range("J15") = Suficiente(stockAlcance)
 
 End Sub
+
+Public Sub test_AlcanceFinal()
+
+    Dim codigo as String
+    codigo = "RP163N51"
+    sheets("Pronostico").range("J11") = AlcanceFinal(codigo)
+
+End Sub

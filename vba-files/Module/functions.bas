@@ -35,7 +35,7 @@ End Function
 
 Public Function Pronostico( _
     ByRef codigo As String, _
-    ByRef pivot As Object) As Long
+    ByRef pivot As Range) As Long
 
     Dim xCount As Variant
     Dim yOffset As Long
@@ -60,7 +60,7 @@ Public Function PromVentasMes( _
     ByVal period As Long) As Long
 
     Dim pivot As Range
-    Dim xCount As Long
+    Dim xCount As Variant
 
     set pivot = sheets("VentasxMes2021").range("A2")
     xCount = Xposition(codigo, pivot)
@@ -79,7 +79,7 @@ End Function
 Public Function GeneralStock(ByVal codigo as String) as Long
 
     Dim pivot as Range
-    Dim xCount as Long
+    Dim xCount as Variant
 
     Set pivot = sheets("Stock").range("A2")
     xCount = Xposition(codigo, pivot)
@@ -96,7 +96,7 @@ Public Function TransStock( _
     ByVal period As Long) as Long
 
     Dim pivot As Range
-    Dim xCount as Long
+    Dim xCount as Variant
 
     Set pivot = sheets("Stock").range("A2")
     xCount = Xposition(codigo, pivot)

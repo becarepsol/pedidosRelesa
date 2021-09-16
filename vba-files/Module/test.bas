@@ -9,7 +9,7 @@ Public Sub test_xPosition()
     Err.Source = "test_xPosition"
 
     Dim codigo As String
-    Dim pivot As Object
+    Dim pivot As Range
 
     codigo = "RP165M51"
     Set pivot = sheets("Pronostico").range("A3")
@@ -25,7 +25,7 @@ Public Sub test_Pronostico()
     Err.Source = "test_Pronostico"
 
     Dim codigo As String
-    Dim pivot As Object
+    Dim pivot As Range
 
     codigo = "RP167N51"
     Set pivot = sheets("Pronostico").range("A3")

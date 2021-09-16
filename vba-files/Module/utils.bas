@@ -5,7 +5,7 @@ Public Function Xposition( _
     ByVal target As String, _
     ByRef pivot As Range) As Variant
 
-    Dim xCount As Integer
+    Dim xCount As Variant
     Dim tempValue As String
 
     xCount = 0

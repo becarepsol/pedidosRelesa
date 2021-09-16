@@ -39,9 +39,9 @@ Public Sub PrintValues(  _
     Dim numPalets As Long
     Dim pedLitros As Long
 
-    Dim stckPosition As Long
+    Dim stckPosition As Variant
     Dim stckLitros As Long
-    Dim pedPosition As Long
+    Dim pedPosition As Variant
 
     pedPosition = Xposition(codigo, hojPed)
     stckPosition = Xposition(codigo, hojStock)

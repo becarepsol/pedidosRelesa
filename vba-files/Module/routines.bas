@@ -19,13 +19,15 @@ Public Function AlcanceFinal(ByVal codigo as String) as Long
             stockGeneral = GeneralStock(codigo)
             promVentMes = PromVentasMes(codigo, periodo)
             else
-            promVentMes = finalAlcance
+            stockGeneral = stockProvisional
         End If
 
         stockProvisional = ProvisionalStock(stockGeneral,stockTrans, promVentMes)
         finalAlcance = Alcance(stockProvisional, promVentMes)
 
     Next periodo
+
+    AlcanceFinal = finalAlcance
 
 End Function
 

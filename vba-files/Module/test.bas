@@ -106,3 +106,24 @@ Public Sub test_Alcance()
     sheets("Pronostico").range("J11") = Alcance(stockProvisional, promVentMes)
 
 End Sub
+
+Public Sub test_Suficiente()
+
+    Dim stockAlcance as Long
+
+    stockAlcance = -1
+    sheets("Pronostico").range("J11") = Suficiente(stockAlcance)
+
+    stockAlcance = 0
+    sheets("Pronostico").range("J12") = Suficiente(stockAlcance)
+
+    stockAlcance = 2
+    sheets("Pronostico").range("J13") = Suficiente(stockAlcance)
+
+    stockAlcance = 3
+    sheets("Pronostico").range("J14") = Suficiente(stockAlcance)
+
+    stockAlcance = 4
+    sheets("Pronostico").range("J15") = Suficiente(stockAlcance)
+
+End Sub

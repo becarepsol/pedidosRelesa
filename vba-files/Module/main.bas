@@ -43,7 +43,7 @@ Public Sub main()
         stockTrans = TransStock(codigo, 3)
         promVentMes = PromVentasMes(codigo, 1)
 
-        stckProv = ProvisionalStock(stockGeneral, stockTrans, promVentMes)
+        stckProv = ProvisionFinal(codigo)
 
         If Suficiente(stockAlcance) Then
 

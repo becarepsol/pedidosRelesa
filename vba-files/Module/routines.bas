@@ -31,6 +31,35 @@ Public Function AlcanceFinal(ByVal codigo as String) as Long
 
 End Function
 
+Public Function ProvisionFinal(ByVal codigo as String) as Long
+
+    Dim promVentMes As Long
+
+    Dim stockGeneral As Long
+    Dim stockTrans As Long
+    Dim stockProvisional As Long
+
+    Dim periodo as Long
+
+    For periodo = 1 To 3
+
+        stockTrans = TransStock(codigo, periodo)
+
+        If (periodo = 1) Then
+            stockGeneral = GeneralStock(codigo)
+            promVentMes = PromVentasMes(codigo, periodo)
+            else
+            stockGeneral = stockProvisional
+        End If
+
+        stockProvisional = ProvisionalStock(stockGeneral,stockTrans, promVentMes)
+
+    Next periodo
+
+    ProvisionFinal = stockProvisional
+
+End Function
+
 Public Sub PrintValues(  _
     ByVal pedido As Long, _
     ByVal codigo As String, _

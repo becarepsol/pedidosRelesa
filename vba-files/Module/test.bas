@@ -149,12 +149,14 @@ Public Sub test_AjustePronos()
     Dim codigo as String
     Dim hojProno As Range
     Dim stckProv As Long
+    Dim pronos As Long
 
     Set hojProno = sheets("Pronostico").range("A3")
 
+    codigo = "RP163N51"
     stckProv = ProvisionFinal(codigo)
     pronos = Pronostico(codigo, hojProno)
 
-    sheets("Pronostico").range("J11") = AjustePronos(pronos)
+    sheets("Pronostico").range("J11") = AjustePronos(codigo, pronos, stckProv)
 
 End Sub

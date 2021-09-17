@@ -40,19 +40,30 @@ Public Sub main()
 
         promVentMes = PromVentasMes(codigo, 1)
 
-        If Suficiente(stockAlcance) Then
+        If (promVentMes <= 0) Then
 
             pedido = 0
+            stckProv = 0
+            stockAlcance = 0
             Call PrintValues(pedido, codigo, stckProv, stockAlcance)
 
-            Else
+        Else
 
-            pronos = Pronostico(codigo, hojProno)
-            pronosAjustado = AjustePronos(codigo, pronos, stckProv)
-            pedido = pronosAjustado
-            stckProv = stckProv + pedido
-            stockAlcance = stckProv / promVentMes
-            Call PrintValues(pedido, codigo, stckProv, stockAlcance)
+            If Suficiente(stockAlcance) Then
+
+                pedido = 0
+                Call PrintValues(pedido, codigo, stckProv, stockAlcance)
+
+                Else
+
+                pronos = Pronostico(codigo, hojProno)
+                pronosAjustado = AjustePronos(codigo, pronos, stckProv)
+                pedido = pronosAjustado
+                stckProv = stckProv + pedido
+                stockAlcance = stckProv / promVentMes
+                Call PrintValues(pedido, codigo, stckProv, stockAlcance)
+
+            End If
 
         End If
 

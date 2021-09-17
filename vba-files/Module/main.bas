@@ -28,12 +28,9 @@ Public Sub main()
     Set hojStock = sheets("Stock").range("A2")
     Set hojProno = sheets("Pronostico").range("A3")
 
-    xOffset = 0
+    xOffset = 1
     codigo = hojPed.offset(xOffset,0)
     Do While codigo <> vbNullString
-
-        xOffset = xOffset + 1
-        codigo = hojPed.offset(xOffset,0)
 
         stockAlcance = AlcanceFinal(codigo)
         stckProv = ProvisionFinal(codigo)
@@ -66,6 +63,9 @@ Public Sub main()
             End If
 
         End If
+
+        xOffset = xOffset + 1
+        codigo = hojPed.offset(xOffset,0)
 
     Loop
 

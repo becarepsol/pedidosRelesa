@@ -107,3 +107,44 @@ Public Function TransStock( _
     TransStock = pivot.offset(xCount, 4 + period)
 
 End Function
+
+Public Function AjustePronos( _
+    ByVal pronos as Long, _
+    ByVal stckProv as Long) as Long
+
+    Dim promVentMes as Long
+    Dim ajustadoAlcance as Long
+    Dim ajustadoStckProv as Long
+
+    promVentMes = PromVentasMes(codigo, 1)
+
+    ajustadoStckProv = ponos + stckProv
+    ajustadoAlcance = ajustadoStckProv / promVentMes
+
+    If (ajustadoAlcance < 3) Then
+
+        Do
+            pronos = pronos + 1
+            ajustadoStckProv = ponos + stckProv
+            ajustadoAlcance = ajustadoStckProv / promVentMes
+        Loop Until ajustadoAlcance >= 3
+
+        AjustePronos = pronos
+
+    ElseIf (ajustadoAlcance > 5) Then
+
+        Do
+            pronos = pronos - 1
+            ajustadoStckProv = ponos + stckProv
+            ajustadoAlcance = ajustadoStckProv / promVentMes
+        Loop Until ajustadoAlcance <= 5
+
+        AjustePronos = pronos
+
+    Else
+
+        AjustePronos = pronos
+
+    End If
+
+End Function

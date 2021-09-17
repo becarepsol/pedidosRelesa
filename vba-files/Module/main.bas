@@ -15,6 +15,7 @@ Public Sub main()
 
     Dim codigo As String
     Dim pedido As Long
+    Dim promVentMes as Long
 
     Dim stckProv As Long
     Dim stockAlcance As Long
@@ -37,6 +38,8 @@ Public Sub main()
         stockAlcance = AlcanceFinal(codigo)
         stckProv = ProvisionFinal(codigo)
 
+        promVentMes = PromVentasMes(codigo, 1)
+
         If Suficiente(stockAlcance) Then
 
             pedido = 0
@@ -44,8 +47,11 @@ Public Sub main()
 
             Else
 
+            pronos = Pronostico(codigo, hojProno)
+            pronosAjustado = AjustePronos(pronos, stckProv)
             pedido = pronosAjustado
             stckProv = stckProv + pedido
+            stockAlcance = stckProv / promVentMes
             Call PrintValues(pedido, codigo, stckProv, stockAlcance)
 
         End If

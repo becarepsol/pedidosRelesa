@@ -16,13 +16,10 @@ Public Sub main()
     Dim codigo As String
     Dim pedido As Long
 
-    Dim stockAlcance As Long
-    Dim pronosAjustado As Long
     Dim stckProv As Long
-
-    Dim stockGeneral As Long
-    Dim stockTrans As Long
-    Dim promVentMes As Long
+    Dim stockAlcance As Long
+    Dim pronos as Long
+    Dim pronosAjustado As Long
 
     Dim xOffset As Long
 
@@ -36,13 +33,8 @@ Public Sub main()
 
         xOffset = xOffset + 1
         codigo = hojPed.offset(xOffset,0)
-        pronosAjustado = Pronostico(codigo, hojProno)
+
         stockAlcance = AlcanceFinal(codigo)
-
-        stockGeneral = GeneralStock(codigo)
-        stockTrans = TransStock(codigo, 3)
-        promVentMes = PromVentasMes(codigo, 1)
-
         stckProv = ProvisionFinal(codigo)
 
         If Suficiente(stockAlcance) Then

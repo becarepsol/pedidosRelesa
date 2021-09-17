@@ -135,3 +135,11 @@ Public Sub test_AlcanceFinal()
     sheets("Pronostico").range("J11") = AlcanceFinal(codigo)
 
 End Sub
+
+Public Sub test_ProvisionFinal()
+
+    Dim codigo as String
+    codigo = "RP163N51"
+    sheets("Pronostico").range("J11") = ProvisionFinal(codigo)
+
+End Sub

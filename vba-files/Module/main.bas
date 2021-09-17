@@ -48,7 +48,7 @@ Public Sub main()
             Else
 
             pronos = Pronostico(codigo, hojProno)
-            pronosAjustado = AjustePronos(pronos, stckProv)
+            pronosAjustado = AjustePronos(codigo, pronos, stckProv)
             pedido = pronosAjustado
             stckProv = stckProv + pedido
             stockAlcance = stckProv / promVentMes

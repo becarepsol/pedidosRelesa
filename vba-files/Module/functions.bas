@@ -109,6 +109,7 @@ Public Function TransStock( _
 End Function
 
 Public Function AjustePronos( _
+    ByVal codigo as String, _
     ByVal pronos as Long, _
     ByVal stckProv as Long) as Long
 
@@ -118,30 +119,30 @@ Public Function AjustePronos( _
 
     promVentMes = PromVentasMes(codigo, 1)
 
-    ajustadoStckProv = ponos + stckProv
+    ajustadoStckProv = pronos + stckProv
     ajustadoAlcance = ajustadoStckProv / promVentMes
 
     If (ajustadoAlcance < 3) Then
 
         Do
             pronos = pronos + 1
-            ajustadoStckProv = ponos + stckProv
+            ajustadoStckProv = pronos + stckProv
             ajustadoAlcance = ajustadoStckProv / promVentMes
         Loop Until ajustadoAlcance >= 3
 
         AjustePronos = pronos
 
-    ElseIf (ajustadoAlcance > 5) Then
+        ElseIf (ajustadoAlcance > 5) Then
 
         Do
             pronos = pronos - 1
-            ajustadoStckProv = ponos + stckProv
+            ajustadoStckProv = pronos + stckProv
             ajustadoAlcance = ajustadoStckProv / promVentMes
         Loop Until ajustadoAlcance <= 5
 
         AjustePronos = pronos
 
-    Else
+        Else
 
         AjustePronos = pronos
 
